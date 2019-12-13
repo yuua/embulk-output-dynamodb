@@ -234,7 +234,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void booleanColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getBoolean(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
@@ -245,7 +245,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void longColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getLong(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
@@ -256,7 +256,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void doubleColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getDouble(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
@@ -267,7 +267,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void stringColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getString(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
@@ -278,7 +278,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void timestampColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getTimestamp(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
@@ -289,7 +289,7 @@ public class DynamodbOutputPlugin
                         @Override
                         public void jsonColumn(Column column)
                         {
-                            if (pageReader.isNull(column)) {
+                            if (pageReader.isNull(column) || "".equals( pageReader.getJson(column)) ) {
                                 addNullValue(column.getName());
                             }
                             else {
